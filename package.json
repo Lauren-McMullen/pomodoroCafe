@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+  },
+  "name": "summer2024project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lauren-McMullen/summer2024project.git"
+  },
+  "author": "Lauren McMullen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lauren-McMullen/summer2024project/issues"
+  },
+  "homepage": "https://github.com/Lauren-McMullen/summer2024project#readme",
+  "description": ""
+}
