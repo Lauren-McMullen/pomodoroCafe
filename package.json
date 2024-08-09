@@ -1,12 +1,13 @@
 {
   "dependencies": {
-    "express": "^4.19.2",
+    "express": "^4.19.2"
   },
   "name": "summer2024project",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
     "url": "https://github.com/Lauren-McMullen/summer2024project/issues"
   },
   "homepage": "https://github.com/Lauren-McMullen/summer2024project#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }
