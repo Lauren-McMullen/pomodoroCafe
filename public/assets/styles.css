@@ -1,12 +1,13 @@
 h1 {
     color: #4d5452;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 body {
     background-color: #76b5c5;
     margin: auto;
-    padding-top: 200px;
+    padding-top: 10%;
 }
 
 .user-input {
@@ -23,9 +24,17 @@ body {
     width: 100%;
 }
 
+.signup-label {
+    margin: 10px;
+    color: #4d5452;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    
+}
+
 .form-container {
     display: flex;
-    width: 50%;
+    width: 60%;
     max-width: 350px;
     text-align: center;
     box-shadow: 2px 2px 4px 1px #4d5452;
@@ -48,6 +57,5 @@ body {
 
 .button:hover {
     opacity: 1;
-    width: 82%;
-    height: 42px;
+    width: 81%;
 }

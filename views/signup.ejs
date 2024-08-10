@@ -12,17 +12,28 @@
         <form  class="user-form" id="login-form">
             <h1 >Create an Account</h1>
 
-                <input type="text" class="user-input" id="username-input" name="username" placeholder="Enter a Username" required>
+            <div class="signup-label">
+                <label for="username">Pick a username: </label>
+                <input type="text" class="user-input" id="username-input" name="username" placeholder="Username" required>
                 <br>
+            </div>
 
-                <input type="text" class="user-input" id="name-input" name="name" placeholder="Enter your Name" required>
+            <div class="signup-label">
+                <label for="name">Enter your name: </label>
+                <input type="text" class="user-input" id="name-input" name="name" placeholder="Name" required>
                 <br>
+            </div>
+
+            <div class="signup-label">
                 
-                <input type="password" class="user-input" id="password-input" name="password" placeholder="Create a Password" required>
+                <label for="name">Choose a password: </label>
+                <input type="password" class="user-input" id="password-input" name="password" placeholder="Password" required>
                 <br>
+           
 
                 <input type="password" class="user-input" id="password-input" name="password" placeholder="Confirm Password" required>
                 <br>
+            </div>
 
                 <button class="button" id="signup-button">Sign-Up</button>
         </form>
