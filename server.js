@@ -13,6 +13,8 @@ const signupRouter = require('./routes/signup');
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 
+app.use('/public', express.static('public'));
+
 // Setup Port
 const port = 50000;
 app.listen(port, () => {

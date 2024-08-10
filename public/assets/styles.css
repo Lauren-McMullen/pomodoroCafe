@@ -1,0 +1,53 @@
+h1 {
+    color: #4d5452;
+}
+
+
+body {
+    background-color: #76b5c5;
+    margin: auto;
+    padding-top: 200px;
+}
+
+.user-input {
+    padding: 8px 4px;
+    border-radius: 3px;
+    width: 80%;
+    margin: 10px;
+}
+
+#login-form {
+    background-color: #f7f4f9;
+    padding: 50px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    width: 50%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 2px 2px 4px 1px #4d5452;
+    margin: 0 auto;
+}
+
+.button {
+    padding: 4px 20px;
+    margin: 10px;
+    width: 80%;
+    color: white;
+    font-size: 18px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #063970;
+    border-style: solid;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+
+.button:hover {
+    opacity: 1;
+    width: 82%;
+    height: 42px;
+}
