@@ -4,7 +4,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-ejs-layouts": "^2.5.1",
-    "mongoose": "^8.5.2"
+    "mongoose": "^8.5.3"
   },
   "name": "summer2024project",
   "version": "1.0.0",
