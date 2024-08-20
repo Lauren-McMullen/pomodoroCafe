@@ -38,7 +38,7 @@
                     <br>
             
 
-                    <input type="password" class="user-input" id="password-input" name="password" placeholder="Confirm Password" required>
+                    <input type="password" class="user-input" id="confirm-password-input" name="password" placeholder="Confirm Password" required>
                     <br>
                 </div>
                     
@@ -46,10 +46,10 @@
 
                 <div class="signup-label">
                     <p>I am a: </p>
-                    <input type="radio" name="skill-type" value="developer">
+                    <input type="radio" id='developer' name="skill-type" value="developer" checked="checked">
                     <label for="developer">Developer</label>
 
-                    <input type="radio" name="skill-type" value="designer">
+                    <input type="radio" id='designer' name="skill-type" value="designer">
                     <label for="designer">Designer</label>
                     
                 </div>
@@ -57,6 +57,8 @@
 
                 <button type='submit' class="button" id="signup-button">Sign-Up</button>
         </form>
+
+        <script src="../public/signup.js"></script>
         
     </div>
 </body>

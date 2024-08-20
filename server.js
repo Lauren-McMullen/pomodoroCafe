@@ -10,10 +10,13 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
 // Mount Routers
-const userRouter = require('./routes/userroute');
+console.log(__filename);
+const userRouter = require('./routes/userRoutes');
 const indexRouter = require('./routes/index');
 app.use('/user', userRouter);
 app.use('/', indexRouter);
+
+
 
 app.use('/public', express.static('public'));
 
