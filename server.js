@@ -10,11 +10,9 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
 // Mount Routers
-const loginRouter = require('./routes/login');
-const signupRouter = require('./routes/signup');
+const userRouter = require('./routes/userroute');
 const indexRouter = require('./routes/index');
-app.use('/login', loginRouter);
-app.use('/signup', signupRouter);
+app.use('/user', userRouter);
 app.use('/', indexRouter);
 
 app.use('/public', express.static('public'));
