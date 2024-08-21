@@ -15,6 +15,9 @@ async function createUser(e) {
 
     const response = await fetch('/user/new', {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
             username: username,
             name: name,
@@ -23,8 +26,11 @@ async function createUser(e) {
         })
     });
 
-    if(response.success) {
-        window.location.href = './login.html'
+    const responseData = await response.json();
+
+    if(responseData.success) {
+        console.log('trying to relocate...');
+        window.location.href = '../user/login';
     } else {
         alert('Error creating user. Please try again.');
     }

@@ -7,27 +7,22 @@ require('dotenv').config();
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.use(express.static('public'));
+app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+
 // Mount Routers
-console.log(__filename);
 const userRouter = require('./routes/userRoutes');
 const indexRouter = require('./routes/index');
 app.use('/user', userRouter);
 app.use('/', indexRouter);
-
-
 
 app.use('/public', express.static('public'));
 
 // Set up database connection
 const mongoose = require('mongoose');
 
-const connectParams = {
-    useUnifiedTopology: true
-}
-
-mongoose.connect(process.env.DATABASE_URL, connectParams).then(() => {
+mongoose.connect(process.env.DATABASE_URL).then(() => {
     console.log('Connected to Mongoose');
 }).catch((e) => {
     console.log('Error:', e);
