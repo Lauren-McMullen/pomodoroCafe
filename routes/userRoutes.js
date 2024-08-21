@@ -12,14 +12,15 @@ router.get('/signup', async (req, res) => {
 
 router.post('/new', async (req, res) => {
     const {username, name, email, password} = req.body;
-    const newUser = await User.createUser(username, name, email, password);
-    if(Object.keys(newUser).length) {
+    const message = await User.createUser(username, name, email, password);
+    if(message === "") {
         res.json({
             success: true
         });
     } else {
         res.status(500).json({
-            success: false
+            success: false,
+            message: message
         });
     }
 });

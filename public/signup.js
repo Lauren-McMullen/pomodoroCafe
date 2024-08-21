@@ -32,7 +32,7 @@ async function createUser(e) {
         console.log('trying to relocate...');
         window.location.href = '../user/login';
     } else {
-        alert('Error creating user. Please try again.');
+        alert(responseData.message);
     }
 
 }
