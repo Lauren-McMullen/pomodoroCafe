@@ -112,7 +112,6 @@ body {
 }
 
 .nav-item {
-    border-radius: 8px;
     padding: 5px 8px;
     text-decoration: none;
     color: darkgreen;
@@ -137,3 +136,9 @@ body {
     float: left;
 }
 
+.navSelected {
+    font-weight: bolder;
+    border-bottom: solid;
+    border-width: 7px;
+    border-bottom-color: darkgreen;
+}
