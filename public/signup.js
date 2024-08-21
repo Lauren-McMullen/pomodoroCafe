@@ -6,7 +6,7 @@ async function createUser(e) {
     const email = document.getElementById('email-input').value;
     const password = document.getElementById('password-input').value;
     const confirmPassword = document.getElementById('confirm-password-input').value;
-    const role = (document.getElementById('developer').checked) ? 'developer' : 'designer';
+  
     
     if(password != confirmPassword) {
         alert('entered passwords must match. Please try again');
@@ -20,7 +20,6 @@ async function createUser(e) {
             name: name,
             email: email,
             password: password,
-            role: role
         })
     });
 
