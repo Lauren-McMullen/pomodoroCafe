@@ -9,6 +9,7 @@
 </head>
 
 <body class="bg">
+    <%- include('partials/header.ejs') %>
     <h1 id="page-title">Welcome to Pomodoro Cafe</h1>
     <div class="form-container">
         <form  action='/user/login' method='POST' class="user-form" id="login-form">
@@ -25,5 +26,7 @@
                 <button class="button" id="signup-button">Signup</button>
         </form>
     </div>
+
+    <script src="../public/login.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <title>Signup</title>
 </head>
 <body class="bg">
+    <%- include('partials/header.ejs') %>
     <h1 id="page-title">Pomodoro Cafe</h1>
     <div class="form-container">
         <form  action='/user/new' method='POST' class="user-form" id="login-form">
@@ -42,17 +43,6 @@
                     <br>
                 </div>
                     
-
-
-                <div class="signup-label">
-                    <p>I am a: </p>
-                    <input type="radio" id='developer' name="skill-type" value="developer" checked="checked">
-                    <label for="developer">Developer</label>
-
-                    <input type="radio" id='designer' name="skill-type" value="designer">
-                    <label for="designer">Designer</label>
-                    
-                </div>
             </div>
 
                 <button type='submit' class="button" id="signup-button">Sign-Up</button>

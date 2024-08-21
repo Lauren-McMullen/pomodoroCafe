@@ -21,13 +21,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    role: {
-        type: String,
-        required: true,
-        validator: v => v === 'developer' || v === 'designer',
-        message: props => `${props} is not a valid role`
-    }
-
+    wallet: {
+        type: Number,
+        min: 0,
+        default: 0},
+    minutes: {
+        type: Number,
+        default: 0} 
 });
 
 module.exports = mongoose.model('User', userSchema);

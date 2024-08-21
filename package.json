@@ -7,7 +7,7 @@
     "express-ejs-layouts": "^2.5.1",
     "mongoose": "^8.5.3"
   },
-  "name": "summer2024project",
+  "name": "pomodoroCafe",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {

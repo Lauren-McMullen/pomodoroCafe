@@ -9,10 +9,11 @@ h1, h3 {
 
 #page-title {
     width: 60%;
-    justify-content: center;
     margin: 0 auto 10px auto;
-    font-size: 48px;
+    font-size: 42px;
     color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 body {
@@ -62,7 +63,7 @@ body {
     font-size: 18px;
     height: 40px;
     border-radius: 8px;
-    background-color: #063970;
+    background-color: rgb(29, 124, 57) ;
     border-style: solid;
     opacity: 0.8;
     transition: 0.4s;
@@ -78,7 +79,7 @@ body {
     width: 100%;
     height: 100%;
     background-size: 400% 400%;
-    background-image: linear-gradient(-45deg, cornflowerblue 25%, #76b5c5 50%, #76b5c5 75%, cornflowerblue 100%);
+    background-image: linear-gradient(-45deg, rgb(29, 124, 57) 25%, #5aa579 50%, #5aa579  75%, rgb(29, 124, 57));
     animation: AnimateBG 10s ease infinite;
     
 }
@@ -93,5 +94,46 @@ body {
       100% {
         background-position: 0% 50%;
       }
+}
+
+/* Nav Bar */
+
+#nav-bar {
+   background-color: white; 
+   width: 100%;
+   height: 80px;
+   box-shadow: 0px 0px 8px 0px #5b685e;
+   margin-bottom: 30px;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 10;
+
+}
+
+.nav-item {
+    border-radius: 8px;
+    padding: 5px 8px;
+    text-decoration: none;
+    color: darkgreen;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin: 0 20px;
+    font-weight: 700;
+}
+
+.nav-item:hover {
+    color: black;
+}
+
+#nav-links {
+    float: right;
+    margin-top: 25px;
+}
+
+#header-logo {
+    margin-top: 25px;
+    margin-left: 40px;
+    float: left;
 }
 
