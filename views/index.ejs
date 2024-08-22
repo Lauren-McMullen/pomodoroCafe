@@ -8,7 +8,42 @@
     <link rel="icon" type="image/x-icon" href="../public/img/logo.png">
     <title>HOME</title>
 </head>
-<body >
+<body>
     <%- include('partials/header.ejs') %>
+
+    <div id="pomo-container">
+        <h3 id="pomo-title">POMODORO TIMER</h3>
+        <div id="timer-buttons">
+            <button id="short-timer">Short Pomo (25 on | 5 off)</button>
+            <button id="long-timer">Long Pomo (50 on | 10 off)</button>
+        </div>
+        <div id="time-settings">
+            <div class="slider-stack">
+                <p class="time-setting-text">Work Length</p>
+                <input class="slider" type="range" id="work-slider" min="1" max="60" value="25">
+                <p class="time-setting-text" id="work-slider-value"></p><p class="time-setting-text">minutes</p>
+            </div>
+            <div class="slider-stack">
+                <p class="time-setting-text">Break Length</p>
+                <input type="range" class="slider" id="break-slider" min="1" max="60" value="5">
+                <p class="time-setting-text" id="break-slider-value"></p> <p class="time-setting-text">minutes</p>
+            </div>
+        </div>
+
+        <h1 id="clock-label"></h1>
+        <h1 id="clock">00:00</h1>
+
+        <div id="timer-controls">
+            <button id="start-timer">START</button>
+            <button id="pause-timer">PAUSE</button>
+            <button id="reset-timer">RESET</button>
+        </div>
+       
+
+    
+    </div>
+
+    <script src="../public/index.js"></script>
+
 </body>
 </html>
