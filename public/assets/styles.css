@@ -147,16 +147,19 @@ body {
 #pomo-container {
     background-color: #9bdbb6;
     border-radius: 8px;
-    height: 80vh;
-    width: 66vh;
-    margin: 5vh 10vh;
+    height: auto;
+    width: 50%;
+    max-width: 100%;
+    margin: 5vh 8vh;
     padding : 20px;
     box-sizing: border-box;
+    overflow: scroll;
 }
 
 #pomo-title {
     padding: 30px;
-    font-size: 36px;
+    font-size: 48px;
+    text-align: center;
 }
 
 #time-settings {
@@ -164,6 +167,7 @@ body {
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
+    width: 100%;
 }
 
 .slide-container {
@@ -179,22 +183,22 @@ body {
     text-align: center;
 }
 
-#timer-buttons {
+#timer-buttons, #timer-controls {
     display: flex;
     flex-direction: row;
-    margin-bottom: 15px;
     width: 100%;
     max-width: 100%;
+    margin-bottom: 10px;
 }
 
 #short-timer, #long-timer, #start-timer, #pause-timer, #reset-timer {
-    font-size: clamp(12px, 1.5vw, 18px);
     padding: 4px 20px;
     margin: 10px;
-    width: 80%;
+    width: 100%;
+    font-size: 20px;
+    min-height: 60px;
+    height: fit-content;
     color: white;
-    font-size: 18px;
-    height: 40px;
     border-radius: 8px;
     background-color: rgb(29, 124, 57) ;
     border-style: solid;
@@ -202,7 +206,7 @@ body {
     transition: 0.4s;
 }
 
-#short-timer:hover, #long-timer:hover {
+#short-timer:hover, #long-timer:hover, #start-timer:hover, #pause-timer:hover, #reset-timer:hover {
     opacity: 1;
 }
 
@@ -219,11 +223,12 @@ body {
     height: 10px;
     border-radius: 5px;
     outline: none;
-    opacity: 0.9;
-    transition: opacity 0.2s;
+    opacity: 0.7;
+    transition: 0.2s;
 }
 
 .slider:hover {
+    height: 12px;
     opacity: 1;
 }
 
@@ -253,15 +258,12 @@ body {
     width: 16px;
 }
 
-#timer-controls {
-    display:flex;
-    flex-direction: row;
-}
-
 #clock, #clock-label {
-    font-size: 62px;
+    font-size: 72px;
     width: 100%;
     max-width: 100%;
-    padding: 30px 10px;
+    margin-bottom: 5px;
     box-sizing: border-box;
 }
+
+
