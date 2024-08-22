@@ -192,7 +192,7 @@ body {
 }
 
 #short-timer, #long-timer, #start-timer, #pause-timer, #reset-timer {
-    padding: 4px 20px;
+    padding: 5px 20px;
     margin: 10px;
     width: 100%;
     font-size: 20px;
