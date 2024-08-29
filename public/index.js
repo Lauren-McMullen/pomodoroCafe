@@ -1,14 +1,13 @@
-import {Clock} from './clock.js';
+import { Clock } from "./clock.js";
 
 const breakSlider = document.getElementById("break-slider");
 const workSlider = document.getElementById("work-slider");
 const breakText = document.getElementById("break-slider-value");
 const workText = document.getElementById("work-slider-value");
 
-let timer = {
+let config = {
     work: workSlider.value,
     break: breakSlider.value,
-    round: 1
 };
 
 breakText.textContent = `${breakSlider.value} minutes`;
@@ -24,10 +23,7 @@ workSlider.oninput = function() {
 
 function startTimer() {
     const label = document.getElementById("clock-label");
-
-    (timer.round % 2 === 0) ? label.textContent = "BREAK" :  label.textContent = "WORK";
-
-
+    label.textContent = 'TEST';
 }
 
 
@@ -47,7 +43,6 @@ window.onload = function () {
     document.getElementById('start-timer').addEventListener('click', startTimer);
 
     const clock = new Clock();
-
 }
 
 
