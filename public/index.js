@@ -4,6 +4,7 @@ const breakSlider = document.getElementById("break-slider");
 const workSlider = document.getElementById("work-slider");
 const breakText = document.getElementById("break-slider-value");
 const workText = document.getElementById("work-slider-value");
+const timeText = document.getElementById("clock");
 
 let config = {
     work: workSlider.value,
@@ -19,11 +20,12 @@ breakSlider.oninput = function() {
 
 workSlider.oninput = function() {
     workText.textContent = `${this.value} minutes`;
+    timeText.textContent = `${this.value}:00`;
 }
 
 function startTimer() {
     const label = document.getElementById("clock-label");
-    label.textContent = 'TEST';
+    label.textContent = 'WORK';
 }
 
 
@@ -33,12 +35,14 @@ window.onload = function () {
         workSlider.value = 25;
         breakText.textContent = '5 minutes';
         breakSlider.value = 5;
+        timeText.textContent = "25:00";
     });
     document.getElementById('long-timer').addEventListener('click', (e) => {
         workText.textContent = '50 minutes';
         workSlider.value = 50;
         breakText.textContent = '10 minutes';
         breakSlider.value = 10;
+        timeText.textContent = "50:00";
     });
     document.getElementById('start-timer').addEventListener('click', startTimer);
 
