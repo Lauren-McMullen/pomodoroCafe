@@ -1,3 +1,5 @@
+import {Clock} from './clock.js';
+
 const breakSlider = document.getElementById("break-slider");
 const workSlider = document.getElementById("work-slider");
 const breakText = document.getElementById("break-slider-value");
@@ -43,6 +45,8 @@ window.onload = function () {
         breakSlider.value = 10;
     });
     document.getElementById('start-timer').addEventListener('click', startTimer);
+
+    const clock = new Clock();
 
 }
 
