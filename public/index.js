@@ -21,9 +21,11 @@ workSlider.oninput = function() {
     updateTimeText();
 }
 
-function startTimer() {
+function runTimer() {
+    console.log(`Enter runTimer(): mode is ${clock.getMode()} || time is ${clock.getSeconds()}`)
     const label = document.getElementById("clock-label");
-    label.textContent = 'WORK';
+    const mode = (clock.getMode()) ? 'WORK' : 'BREAK';
+    label.textContent = `${mode}`;
     
     let interval = setInterval(() => {
 
@@ -32,6 +34,13 @@ function startTimer() {
 
         if(clock.getSeconds() === 0) {
             clearInterval(interval);
+            clock.setMode((clock.getMode() + 1) % 2);
+            if(clock.getMode()) {
+                clock.setSeconds(workSlider.value * 60);
+            } else {
+                clock.setSeconds(breakSlider.value * 60);
+            }
+            runTimer();
         }
 
     }, 1000);
@@ -71,6 +80,8 @@ function updateTimeText() {
 
 
 window.onload = function () {
+
+    //Add action listeners for timer buttons
     document.getElementById('short-timer').addEventListener('click', (e) => {
         workText.textContent = '25 minutes';
         workSlider.value = 25;
@@ -87,12 +98,15 @@ window.onload = function () {
         clock.setSeconds(workSlider.value * 60);
         updateTimeText();
     });
-    document.getElementById('start-timer').addEventListener('click', startTimer);
+    document.getElementById('start-timer').addEventListener('click', runTimer);
     document.getElementById('reset-timer').addEventListener('click', (e) => {
+        clock.setMode(1);
         clock.setSeconds(workSlider.value * 60);
         updateTimeText();
     });
 
+    //Reset work timer
+    clock.setMode(1);
     clock.setSeconds(workSlider.value * 60);
     updateTimeText();
 }
