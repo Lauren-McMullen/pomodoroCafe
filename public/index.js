@@ -29,17 +29,16 @@ workSlider.oninput = function() {
 function startTimer() {
     const label = document.getElementById("clock-label");
     label.textContent = 'WORK';
-    // function tickTimer() {
-    //     if(clock.getSeconds() > 0) {
-    //         clock.tick();
-    //         console.log(clock.getSeconds());
-    //         updateTimeText();
-    //         setTimeout(tickTimer(), 1000);
-    //     }
-    // }
-    clock.tick();
-    updateTimeText();
-    
+    let interval = setInterval(() => {
+
+        clock.tick();
+        updateTimeText();
+
+        if(clock.getSeconds() === 0) {
+            clearInterval(interval);
+        }
+
+    }, 1000);
 }
 
 function updateTimeText() {
