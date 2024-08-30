@@ -8,11 +8,6 @@ const breakText = document.getElementById("break-slider-value");
 const workText = document.getElementById("work-slider-value");
 const timeText = document.getElementById("clock");
 
-// let config = {
-//     work: workSlider.value,
-//     break: breakSlider.value,
-// };
-
 breakText.textContent = `${breakSlider.value} minutes`;
 workText.textContent = `${workSlider.value} minutes`;
 
@@ -29,6 +24,7 @@ workSlider.oninput = function() {
 function startTimer() {
     const label = document.getElementById("clock-label");
     label.textContent = 'WORK';
+    
     let interval = setInterval(() => {
 
         clock.tick();
@@ -39,6 +35,15 @@ function startTimer() {
         }
 
     }, 1000);
+
+    document.getElementById('reset-timer').addEventListener('click', (e) => {
+        clearInterval(interval);
+    });
+    document.getElementById('pause-timer').addEventListener('click', (e) => {
+        clearInterval(interval);
+    });
+
+    
 }
 
 function updateTimeText() {
@@ -46,7 +51,6 @@ function updateTimeText() {
     const seconds = time.seconds;
     const minutes = time.minutes;
 
-    
     if(minutes >= 10) {
         timeText.textContent = `${minutes}:`;
     } else {
@@ -91,7 +95,6 @@ window.onload = function () {
 
     clock.setSeconds(workSlider.value * 60);
     updateTimeText();
-    console.log(`on update: ${clock.getSeconds()}`);
 }
 
 
