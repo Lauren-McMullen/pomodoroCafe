@@ -9,12 +9,19 @@ export class Clock {
         this.seconds = seconds;
     }
 
+    getSeconds() {
+        return this.seconds;
+    }
+
     increaseRounds() {
         this.rounds += 1;
     }
 
     tick() {
         this.seconds--;
+        if(this.seconds < 0) {
+            this.seconds = 0;
+        }
     }
 
     getTimeRemaining() {
