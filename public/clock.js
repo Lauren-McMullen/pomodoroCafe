@@ -4,6 +4,7 @@ export class Clock {
         this.seconds = 0;
         this.rounds = 0;
         this.mode = 1;
+        this.longBreak = false;
     }
 
     setSeconds(seconds) {
@@ -22,8 +23,24 @@ export class Clock {
         return this.mode;
     }
 
+    getRounds() {
+        return this.rounds;
+    }
+
+    resetRounds() {
+        this.rounds = 0;
+    }
+
     increaseRounds() {
         this.rounds += 1;
+    }
+
+    setLongBreak(val) {
+        this.longBreak = val;
+    }
+
+    getLongBreak() {
+        return this.longBreak;
     }
 
     tick() {

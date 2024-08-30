@@ -13,6 +13,8 @@ workText.textContent = `${workSlider.value} minutes`;
 
 breakSlider.oninput = function() {
     breakText.textContent = `${this.value} minutes`;
+    clock.setSeconds(breakSlider.value * 60);
+    updateTimeText();
 }
 
 workSlider.oninput = function() {
@@ -22,9 +24,17 @@ workSlider.oninput = function() {
 }
 
 function runTimer() {
-    console.log(`Enter runTimer(): mode is ${clock.getMode()} || time is ${clock.getSeconds()}`)
+
+    console.log(`runTimer() rounds: ${clock.getRounds()}`);
+    console.log(`runTimer() longBreak?:${clock.getLongBreak()}`);
+
+
     const label = document.getElementById("clock-label");
-    const mode = (clock.getMode()) ? 'WORK' : 'BREAK';
+
+    let mode = (clock.getMode()) ? 'WORK' : 'BREAK';
+    if(clock.getLongBreak()) {
+        mode = "LONG BREAK";
+    }
     label.textContent = `${mode}`;
     
     let interval = setInterval(() => {
@@ -34,12 +44,25 @@ function runTimer() {
 
         if(clock.getSeconds() === 0) {
             clearInterval(interval);
+
+            if(clock.getMode()) {clock.increaseRounds()};
             clock.setMode((clock.getMode() + 1) % 2);
+
             if(clock.getMode()) {
                 clock.setSeconds(workSlider.value * 60);
+                clock.setLongBreak(false);
+                
             } else {
-                clock.setSeconds(breakSlider.value * 60);
+                if(clock.getRounds() > 0 && clock.getRounds() % 4 === 0) {
+                    clock.setSeconds(breakSlider.value * 180);
+                    clock.setLongBreak(true);
+                } else {
+                    clock.setSeconds(breakSlider.value * 60);
+                    clock.setLongBreak(false);
+                }
             }
+
+            updateTimeText();
             runTimer();
         }
 
@@ -81,6 +104,8 @@ function updateTimeText() {
 
 window.onload = function () {
 
+    
+
     //Add action listeners for timer buttons
     document.getElementById('short-timer').addEventListener('click', (e) => {
         workText.textContent = '25 minutes';
@@ -88,6 +113,7 @@ window.onload = function () {
         breakText.textContent = '5 minutes';
         breakSlider.value = 5;
         clock.setSeconds(workSlider.value * 60);
+        clock.setMode(1);
         updateTimeText();
     });
     document.getElementById('long-timer').addEventListener('click', (e) => {
@@ -96,17 +122,22 @@ window.onload = function () {
         breakText.textContent = '10 minutes';
         breakSlider.value = 10;
         clock.setSeconds(workSlider.value * 60);
+        clock.setMode(1);
         updateTimeText();
     });
     document.getElementById('start-timer').addEventListener('click', runTimer);
     document.getElementById('reset-timer').addEventListener('click', (e) => {
         clock.setMode(1);
+        clock.resetRounds();
         clock.setSeconds(workSlider.value * 60);
         updateTimeText();
+        document.getElementById("clock-label").textContent = 'WORK';
+
     });
 
     //Reset work timer
     clock.setMode(1);
+    clock.resetRounds();
     clock.setSeconds(workSlider.value * 60);
     updateTimeText();
 }
