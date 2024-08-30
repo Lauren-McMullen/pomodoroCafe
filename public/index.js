@@ -25,8 +25,8 @@ workSlider.oninput = function() {
 
 function runTimer() {
 
-    console.log(`runTimer() rounds: ${clock.getRounds()}`);
-    console.log(`runTimer() longBreak?:${clock.getLongBreak()}`);
+    // console.log(`runTimer() rounds: ${clock.getRounds()}`);
+    // console.log(`runTimer() longBreak?:${clock.getLongBreak()}`);
 
 
     const label = document.getElementById("clock-label");
@@ -69,9 +69,11 @@ function runTimer() {
     }, 1000);
 
     document.getElementById('reset-timer').addEventListener('click', (e) => {
+        document.getElementById('start-timer').addEventListener('click', runTimer, { once: true });
         clearInterval(interval);
     });
     document.getElementById('pause-timer').addEventListener('click', (e) => {
+        document.getElementById('start-timer').addEventListener('click', runTimer, { once: true });
         clearInterval(interval);
     });
 
@@ -104,8 +106,6 @@ function updateTimeText() {
 
 window.onload = function () {
 
-    
-
     //Add action listeners for timer buttons
     document.getElementById('short-timer').addEventListener('click', (e) => {
         workText.textContent = '25 minutes';
@@ -125,7 +125,7 @@ window.onload = function () {
         clock.setMode(1);
         updateTimeText();
     });
-    document.getElementById('start-timer').addEventListener('click', runTimer);
+    document.getElementById('start-timer').addEventListener('click', runTimer, { once: true });
     document.getElementById('reset-timer').addEventListener('click', (e) => {
         clock.setMode(1);
         clock.resetRounds();
