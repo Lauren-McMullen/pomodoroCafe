@@ -26,6 +26,8 @@
   "homepage": "https://github.com/Lauren-McMullen/summer2024project#readme",
   "description": "",
   "devDependencies": {
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.2",
     "dotenv": "^16.4.5",
     "nodemon": "^3.1.4"
   }
