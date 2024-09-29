@@ -1,5 +1,7 @@
 import { Clock } from "./clock.js";
 const clock = new Clock();
+let alarm = new Audio("./assets/alarm.mp3");
+alarm.volume = 0.7;
 
 
 const breakSlider = document.getElementById("break-slider");
@@ -25,10 +27,6 @@ workSlider.oninput = function() {
 
 function runTimer() {
 
-    // console.log(`runTimer() rounds: ${clock.getRounds()}`);
-    // console.log(`runTimer() longBreak?:${clock.getLongBreak()}`);
-
-
     const label = document.getElementById("clock-label");
 
     let mode = (clock.getMode()) ? 'WORK' : 'BREAK';
@@ -43,6 +41,7 @@ function runTimer() {
         updateTimeText();
 
         if(clock.getSeconds() === 0) {
+            alarm.play();
             clearInterval(interval);
 
             if(clock.getMode()) {clock.increaseRounds()};
