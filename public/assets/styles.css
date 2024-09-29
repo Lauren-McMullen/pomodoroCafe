@@ -175,6 +175,10 @@ body {
     width: 100%;
 }
 
+#home-body {
+    background-color: #d6c8bb;
+}
+
 .time-setting-text {
     margin: 0;
     width:100%;
